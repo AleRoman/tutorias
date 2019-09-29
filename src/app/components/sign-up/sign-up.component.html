@@ -1,45 +1,48 @@
-<div class="displayTable">
-    <div class="displayTableCell">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <img src="/assets/img/undraw_Hello_qnas.png" alt="" style="width: 30vw">
+        </div>
 
-        <div class="authBlock">
-            <h3>Sign Up</h3>
+    <div class="col-md-4    ">
+        <div class="">
 
-            <div class="formGroup">
-                <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+            <div class="authBlock">
+                <h3>Registrarse</h3>
+
+                <div class="formGroup">
+                    <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
+                </div>
+                <br>
+                
+                <div class="formGroup">
+                    <input type="password" class="form-control" placeholder="Password" #userPwd required>
+                </div>
+                <br>
+                <div class="formGroup">
+                    <input type="button" class="btn btn-success" value="Registrarse"
+                        (click)="authService.SignUp(userEmail.value, userPwd.value)">
+                </div>
+
+                <div class="formGroup">
+                    <span class="or"><span class="orInner">O</span></span>
+                </div>
+
+                <!-- Continue with Google -->
+                <div class="formGroup">
+                    <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+                        <i class="fab fa-google-plus-g"></i>
+                        Continuar con Google
+                    </button>
+                </div>
+
             </div>
 
-            <div class="formGroup">
-                <input type="password" class="formControl" placeholder="Password" #userPwd required>
-            </div>
-
-            <div class="formGroup">
-                <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-            </div>
-
-            <div class="formGroup">
-                <span class="or"><span class="orInner">Or</span></span>
-            </div>
-
-            <!-- Continue with Google -->
-            <div class="formGroup">
-                <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-            </div>
-
-            <!-- Continue with Facebook -->
-            <div class="formGroup">
-                <button type="button" class="btn facebookBtn" (click)="authService.FacebookAuth()">
-          <i class="fab fa-facebook"></i>
-          Continue with Facebook
-        </button>
+            <div class="redirectToLogin">
+                <span>Ya tienes una cuenta? <span class="redirect" routerLink="/sign-in">Login</span></span>
             </div>
         </div>
 
-        <div class="redirectToLogin">
-            <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
-        </div>
     </div>
-
+</div>
 </div>

@@ -11,15 +11,19 @@ import { DashboardComponent } from '../app/components/dashboard/dashboard.compon
 
 import { AuthGuard } from '../app/shared/guard/auth.guard';
 import { SecureInnerPagesGuard } from '../app/shared/guard/secure-inner-pages.guard.ts.guard';
+import { ArticuloComponent } from './components/articulo/articulo.component';
+import { CuestionarioComponent } from './components/cuestionario/cuestionario.component';
 
 // Include route guard in routes array
 // Import canActivate guard services
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'publicaciones', component: PublicacionesComponent },
-  { path: 'sign-in', component: SignInComponent},
-  { path: 'register-user', component: SignUpComponent, canActivate: [SecureInnerPagesGuard]},
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'register-user', component: SignUpComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'articulo', component: ArticuloComponent },
+  {path: 'cuestionario', component: CuestionarioComponent}
 
 ];
 @NgModule({
