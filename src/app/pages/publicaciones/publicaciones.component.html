@@ -1,10 +1,10 @@
 <div class="position-relative overflow-hidden p-0 m-0 row bg-light">
   <div class="container">
-    <div class="jumbotron p-3 p-md-5 text-white rounded mt-4" style="background-image: url('assets/img/student.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <div class="jumbotron p-3 p-md-5 text-white rounded mt-4" style="background-image: linear-gradient(to right, rgba(106, 17, 203, .3) 0%, #2575fc 100%), url('assets/img/student.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
       <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+        <h1 class="display-5 font-italic">Aprender compartiendo</h1>
+        <p class="lead my-3">Una plataforma ideada como complemento a la enseñanza tradicional por medio de la colaboración entre usuarios.</p>
+        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Leer más...</a></p>
       </div>
     </div>
     <h3 class="pb-3 mb-4 font-italic border-bottom">
@@ -14,70 +14,38 @@
       <div class="container-fluid">
         <div id="carousel-example" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner row w-100 mx-auto" role="listbox">
-              <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6 active">
-                <div class="card flex-md-row mb-4 box-shadow ">
-                  <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-primary">Matemáticas</strong>
-                    <h3 class="mb-0">
-                      <a class="text-dark" href="#"> <strong> Derivadas Aplicadas.</strong></a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 12</div>
-                    <p class="card-text mb-auto">Con frecuencia en la vida, nos enfrentamos con el problema de encontrar la mejor...</p>
-                    <a routerLink = "/articulo">Continuar leyendo</a>
-                  </div>
-                  <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
-                      <img style="width: 100%; margin-top: 17%;" src="assets/img/undraw_mathematics_4otb.svg">
-                  </div>          
+            <!-- <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6 active">
+              <div class="card flex-md-row mb-4 box-shadow ">
+                <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
+                  <strong class="d-inline-block mb-2 text-danger">Matematicas</strong>
+                  <h3 class="mb-0">
+                    <a class="text-dark" href="#">Derivadas Aplicadas.</a>
+                  </h3>
+                  <div class="mb-1 text-muted">Nov 12</div>
+                  <p class="card-text mb-auto">Con frecuencia en la vida, nos enfrentamos con el problema de encontrar la mejor...</p>
+                  <a href="#">Continuar leyendo</a>
+                </div>
+                <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
+                    <img style="width: 100%; margin-top: 17%;" src="assets/img/undraw_mathematics_4otb.svg">
+                </div>          
+              </div>
+            </div> -->
+            <div *ngFor="let element of array" class="carousel-item it-2 col-12 col-sm-6 col-md-6 col-lg-6 {{element.status}}" >
+              <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
+                  <strong class="d-inline-block mb-2 text-{{element.color}}">{{element.area}}</strong>
+                  <h3 class="mb-0">
+                    <a class="text-dark" href="#">{{element.titulo}}</a>
+                  </h3>
+                  <div class="mb-1 text-muted">{{element.fecha}}</div>
+                  <p class="card-text mb-auto">{{element.texto}}</p>
+                  <a href="#">Continue reading</a>
+                </div>
+                <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
+                  <img style="width: 100%; margin-top: 34%;" src="assets/img/{{element.imagen}}">
                 </div>
               </div>
-              <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                  <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-success">Ciencias</strong>
-                    <h3 class="mb-0">
-                      <a class="text-dark" href="#"><strong>Los  éxitos de la ciencia. </strong></a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 11</div>
-                    <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
-                    <a href="#">Continue reading</a>
-                  </div>
-                  <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
-                    <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_science_fqhl.svg">
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                  <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-warning">Tecnología</strong>
-                    <h3 class="mb-0">
-                      <a class="text-dark" href="#"><strong>   Industria 4.0 </strong></a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 13</div>
-                    <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
-                    <a href="#">Continue reading</a>
-                  </div>
-                  <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
-                    <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_pie_graph_x9dy.svg">
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                  <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-danger">Robótica</strong>
-                    <h3 class="mb-0">
-                      <a class="text-dark" href="#"><strong> Introducción IoT </strong></a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 13</div>
-                    <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
-                    <a href="#">Continue reading</a>
-                  </div>
-                  <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
-                    <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_pie_graph_x9dy.svg">
-                  </div>
-                </div>
-              </div>
+            </div>
           </div>
           <a class="carousel-control-prev rounded-circle my-auto" style="height: 35px; width: 35px; background-color: #6c63ff;" href="#carousel-example" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon"aria-hidden="true"></span>
@@ -97,70 +65,70 @@
       <div class="container-fluid">
         <div id="carousel-example" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner row w-100 mx-auto" id="car2" role="listbox">
-              <div class="carousel-item it-2 col-12 col-sm-6 col-md-6 col-lg-6 active">
-                <div class="card flex-md-row mb-4 box-shadow ">
-                  <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-primary">Matematicas</strong>
-                    <h3 class="mb-0">
-                      <a class="text-dark" href="#"><strong> Aplicadas. </strong></a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 12</div>
-                    <p class="card-text mb-auto">Con frecuencia en la vida, nos enfrentamos con el problema de encontrar la mejor...</p>
-                    <a href="#">Continuar leyendo</a>
-                  </div>
-                  <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
-                      <img style="width: 100%; margin-top: 17%;" src="assets/img/undraw_mathematics_4otb.svg">
-                  </div>          
+            <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6 active">
+              <div class="card flex-md-row mb-4 box-shadow ">
+                <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
+                  <strong class="d-inline-block mb-2 text-primary">Matematicas</strong>
+                  <h3 class="mb-0">
+                    <a class="text-dark" href="#">Derivadas Aplicadas.</a>
+                  </h3>
+                  <div class="mb-1 text-muted">Nov 12</div>
+                  <p class="card-text mb-auto">Con frecuencia en la vida, nos enfrentamos con el problema de encontrar la mejor...</p>
+                  <a href="#">Continuar leyendo</a>
+                </div>
+                <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
+                    <img style="width: 100%; margin-top: 17%;" src="assets/img/undraw_mathematics_4otb.svg">
+                </div>          
+              </div>
+            </div>
+            <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6">
+              <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
+                  <strong class="d-inline-block mb-2 text-success">Ciencias</strong>
+                  <h3 class="mb-0">
+                    <a class="text-dark" href="#">Los éxitos de la ciencia.</a>
+                  </h3>
+                  <div class="mb-1 text-muted">Nov 11</div>
+                  <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
+                  <a href="#">Continue reading</a>
+                </div>
+                <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
+                  <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_science_fqhl.svg">
                 </div>
               </div>
-              <div class="carousel-item it-2 col-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                  <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-success">Ciencias</strong>
-                    <h3 class="mb-0">
-                      <a class="text-dark" href="#"><strong>Los éxitos de la ciencia. </strong></a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 11</div>
-                    <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
-                    <a href="#">Continuar leyendo</a>
-                  </div>
-                  <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
-                    <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_science_fqhl.svg">
-                  </div>
+            </div>
+            <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6">
+              <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
+                  <strong class="d-inline-block mb-2 text-warning">Tecnologia</strong>
+                  <h3 class="mb-0">
+                    <a class="text-dark" href="#">Industria 4.0</a>
+                  </h3>
+                  <div class="mb-1 text-muted">Nov 13</div>
+                  <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
+                  <a href="#">Continue reading</a>
+                </div>
+                <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
+                  <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_pie_graph_x9dy.svg">
                 </div>
               </div>
-              <div class="carousel-item it-2 col-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                  <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-warning">Tecnología</strong>
-                    <h3 class="mb-0">
-                      <a class="text-dark" href="#"><strong> Industria 4.0 </strong> </a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 13</div>
-                    <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
-                    <a href="#">Continue reading</a>
-                  </div>
-                  <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
-                    <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_pie_graph_x9dy.svg">
-                  </div>
+            </div>
+            <div class="carousel-item col-12 col-sm-6 col-md-6 col-lg-6">
+              <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
+                  <strong class="d-inline-block mb-2 text-danger">Robotica</strong>
+                  <h3 class="mb-0">
+                    <a class="text-dark" href="#">Introduccion IoT</a>
+                  </h3>
+                  <div class="mb-1 text-muted">Nov 13</div>
+                  <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
+                  <a href="#">Continue reading</a>
+                </div>
+                <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
+                  <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_pie_graph_x9dy.svg">
                 </div>
               </div>
-              <div class="carousel-item it-2 col-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                  <div class="card-body col-sm-12 col-lg-8 d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-danger">Robótica</strong>
-                    <h3 class="mb-0">
-                      <a class="text-dark" href="#"><strong>  Introducción IoT </strong></a>
-                    </h3>
-                    <div class="mb-1 text-muted">Nov 13</div>
-                    <p class="card-text mb-auto">La ciencia, en su alianza con la tecnología son indudables. Nos han proporcio...</p>
-                    <a href="#">Continuar leyendo</a>
-                  </div>
-                  <div class="card-img-right col-4 flex-auto d-none d-md-block" data-holder-rendered="true">
-                    <img style="width: 100%; margin-top: 34%;" src="assets/img/undraw_pie_graph_x9dy.svg">
-                  </div>
-                </div>
-              </div>
+            </div>
           </div>
           <a class="carousel-control-prev rounded-circle my-auto pr" style="height: 35px; width: 35px; background-color: #6c63ff;" href="#carousel-example" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon"aria-hidden="true"></span>
@@ -172,7 +140,7 @@
           </a>
         </div>            
       </div>
-      </div>
+    </div>
   </div>
 </div>
 

@@ -20,6 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PublicacionesComponent } from './pages/publicaciones/publicaciones.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
 import { CuestionarioComponent } from './components/cuestionario/cuestionario.component';
+import { ColaborativoComponent } from './pages/colaborativo/colaborativo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CuestionarioComponent } from './components/cuestionario/cuestionario.co
     SignInComponent,
     SignUpComponent,
     ArticuloComponent,
-    CuestionarioComponent
+    CuestionarioComponent,
+    ColaborativoComponent
   ],
   imports: [
     BrowserModule,

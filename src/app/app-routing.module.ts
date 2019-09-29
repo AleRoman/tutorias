@@ -13,6 +13,7 @@ import { AuthGuard } from '../app/shared/guard/auth.guard';
 import { SecureInnerPagesGuard } from '../app/shared/guard/secure-inner-pages.guard.ts.guard';
 import { ArticuloComponent } from './components/articulo/articulo.component';
 import { CuestionarioComponent } from './components/cuestionario/cuestionario.component';
+import { ColaborativoComponent } from './pages/colaborativo/colaborativo.component';
 
 // Include route guard in routes array
 // Import canActivate guard services
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'register-user', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'articulo', component: ArticuloComponent },
-  {path: 'cuestionario', component: CuestionarioComponent}
+  {path: 'cuestionario', component: CuestionarioComponent},
+  { path: 'colaborativo', component: ColaborativoComponent},
 
 ];
 @NgModule({
