@@ -1,0 +1,26 @@
+<div class="position-relative overflow-hidden p-0 m-0 row bg-light">
+  <div class="container">
+    <div class="jumbotron p-3 p-md-5 text-white rounded mt-4"
+      style="background-image: linear-gradient(to left, rgba(106, 17, 203, .3) 0%, #2575fc 100%), url('http://media2.govtech.com/images/Collaboration_CDE_2016-07-25.jpg'); background-repeat: no-repeat; background-size: cover; background-position: top center;">
+      <div class="col-md-6 px-0">
+        <h1 class="display-5 font-italic">Aprender haciendo y compartiendo</h1>
+        <p class="lead my-3">No importa si eres estudiante o docente, aprendamos juntos.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" *ngFor="let profe of profes">
+        <div class="card" style="width: 18rem; margin-bottom: 20px">
+          <div class="">
+            <img [src]="profe.foto" class="rounded" id="fotito" alt="Fotografía" style="width: 100px">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">{{profe.nombre}}</h5>
+            <p class="card-text" style="display: block; margin: auto;">Te puedo ayudar en:</p>
+            <p [class]="profe.color"><strong>{{profe.areas}}</strong></p>
+            <a href="#" class="btn btn-primary">¡Háblame!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

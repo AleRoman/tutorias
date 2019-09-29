@@ -18,6 +18,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PublicacionesComponent } from './pages/publicaciones/publicaciones.component';
+import { ColaborativoComponent } from './pages/colaborativo/colaborativo.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PublicacionesComponent } from './pages/publicaciones/publicaciones.comp
     PublicacionesComponent,
     DashboardComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    ColaborativoComponent
   ],
   imports: [
     BrowserModule,
