@@ -1,0 +1,33 @@
+<div class="container" style="padding-top: 70px">
+    <!-- Content here -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <img style="width: 450px; margin-left:250px" src="/assets/img/ola.svg">
+            </div>
+            <div class="col-md-4">
+                <form style="margin-right:80px">
+                    <label>Correo</label>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="email" #userName required>
+                    </div>
+                    <label>Contraseña</label>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" #userPassword required>
+                    </div>
+                    <button type="submit" class="btn btn-success" (click)="authService.SignIn(userName.value, userPassword.value)">Login</button>
+                </form>
+                <div class="form-group">
+                    <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+                          <i class="fab fa-google-plus-g"></i>
+                          Log in with Google
+                        </button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
